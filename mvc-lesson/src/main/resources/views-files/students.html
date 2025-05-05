@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Students</h1>
+
+    <div th:each="student : ${students}">
+        <h2 th:text="'Student name: '+ ${student.name} + ' And id is: ' + ${student.id}"></h2>
+        <p th:text="'Email: ' + ${student.email}"></p>
+        <div th:if="${student.isSQLExpert}">
+            <h3>Certified</h3>
+        </div>
+
+        <div th:unless="${student.isSQLExpert}">
+            <h3>Not Certified</h3>
+            <button>See Here</button>
+        </div>
+
+    </div>
+</body>
+</html>

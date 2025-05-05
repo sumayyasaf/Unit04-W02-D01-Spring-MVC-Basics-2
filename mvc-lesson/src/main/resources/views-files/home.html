@@ -1,0 +1,31 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+
+
+    <link rel="stylesheet" th:href="@{/css/home.css}">
+
+</head>
+
+<body>
+<h1>Homepage Welcome</h1>
+
+<img th:src="@{/images/cat-image.jpg}" alt="cat-image"/>
+
+<p th:text="'Hello ' + ${student.name}"></p>
+
+
+<div th:if="${student.isSQLExpert}">
+    <h3>Welcome SQL Expert</h3>
+</div>
+
+<div th:unless="${student.isSQLExpert}">
+    <h3>See our available SQL courses</h3>
+    <button>See Here</button>
+</div>
+
+
+<h4 th:class="${student.isSQLExpert}  ? 'success' : 'error'">Message</h4>
+
+
+</body>
+</html>
