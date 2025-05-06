@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Book List</title>
+    <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+<h1>Book List</h1>
+<table>
+    <tr>
+        <th>Title</th><th>Author</th><th>Genre</th><th>Year</th><th>Price</th><th>Status</th>
+    </tr>
+    <tr th:each="book : ${books}"
+        th:class="${book.inStock} ? 'in-stock' : 'out-of-stock'">
+        <td th:text="${book.title}"></td>
+        <td th:text="${book.author}"></td>
+        <td th:text="${book.genre}"></td>
+        <td th:text="${book.year}"></td>
+        <td th:text="${book.price}"></td>
+        <td>
+            <span th:if="${book.inStock}">[In Stock]</span>
+            <span th:unless="${book.inStock}">[Out of Stock]</span>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

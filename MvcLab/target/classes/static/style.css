@@ -1,0 +1,14 @@
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 8px;
+    border: 1px solid #ccc;
+}
+.in-stock {
+    background-color: #d4edda;
+}
+.out-of-stock {
+    background-color: #f8d7da;
+}
